@@ -1,0 +1,11 @@
+{
+  "name": "sql-schema-migrator",
+  "version": "1.1.0",
+  "main": "js/sql_validator.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
