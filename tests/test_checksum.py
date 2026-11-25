@@ -1,5 +1,8 @@
-from src.engine.checksum import compute_checksum
-def test_checksum():
-    c1 = compute_checksum('CREATE TABLE t();')
-    c2 = compute_checksum('CREATE TABLE t();')
-    assert c1 == c2
+from src.security.checksum import IntegrityVerifier
+
+def test_integrity_verifier():
+    sample = b"antigravity-enterprise-payload"
+    digest = IntegrityVerifier.compute_sha256(sample)
+    assert len(digest) == 64
+    assert IntegrityVerifier.verify(sample, digest) is True
+    assert IntegrityVerifier.verify(b"corrupted-data", digest) is False
