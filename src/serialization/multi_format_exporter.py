@@ -7,9 +7,7 @@ from typing import List, Dict, Any
 class MultiFormatExporter:
     @staticmethod
     def to_ndjson(records: List[Dict[str, Any]]) -> str:
-        return "
-".join(json.dumps(r) for r in records) + "
-"
+        return "\n".join(json.dumps(r) for r in records) + "\n"
 
     @staticmethod
     def to_csv(records: List[Dict[str, Any]]) -> str:

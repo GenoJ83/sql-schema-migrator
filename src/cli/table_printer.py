@@ -17,5 +17,4 @@ class TerminalTablePrinter:
             for row in rows
         ]
 
-        return "
-".join([sep, head_line, sep] + body_lines + [sep])
+        return "\n".join([sep, head_line, sep] + body_lines + [sep])
